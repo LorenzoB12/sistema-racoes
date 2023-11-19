@@ -259,8 +259,3 @@ main.active {
 	margin-top: 20px;
 	transition: all ease .4s;
 }
-
-.input-perso:hover{
-    transform: scale(1.03);
-    transition: all ease .4s;
-}
