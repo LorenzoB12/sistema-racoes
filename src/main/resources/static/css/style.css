@@ -1,0 +1,45 @@
+/*.card-head {
+	padding: .75rem 1.25rem;
+	margin-bottom: 0;
+	background-color: rgba(0, 0, 0, .03);
+	border-bottom: 1px solid rgba(0, 0, 0, .125);
+}
+
+.card {
+	margin-top: 15px;
+	margin-bottom: 15px;
+	border: 1px solid #ccc;
+    box-shadow: 3px 3px 7px rgba(0, 0, 0, 0.25);
+}
+
+.img-icon{
+    transform: scale(1.5);
+}
+
+tr td{
+    text-align: center!important;
+}
+
+tr th{
+    text-align: center!important;
+}
+
+.modal-xl{
+    max-width: 90%!important;
+}
+
+.dataTable {
+	width: 100% !important;
+}
+
+.dataTables_scrollHeadInner {
+	width: 100% !important;
+}
+
+tr.even td {
+	background-color: #f2f2f2;
+}
+
+tr.odd td {
+	background-color: #ffffff;
+}/*

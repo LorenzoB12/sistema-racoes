@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="pt-BR" dir="ltr">
+   <head>
+      <meta charset="UTF-8">
+      <title> ERP RAÇÕES </title>
+      
+      <!-- LOGO -->
+	  <link rel="icon" href="../icons/ico.png" type="image/x-icon">
+      
+      <!-- LINK COM AS CONFIGURAÇÕES DE CSS QUE PEGO DO BOOTSTRAP E USO NO PROJETO -->
+      <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css">
+      
+      <!-- LINK COM O ARQUIVO DE CSS QUE USO NO MENU -->
+      <link rel="stylesheet" href="../css/menu.css">
+      
+      <!-- LINK COM O ARQUIVO DE CSS EM TODAS AS TELAS DA APLICAÇÃO -->
+      <link rel="stylesheet" href="../css/geral.css">
+	  <!--<link rel="stylesheet" href="../css/style.css">-->
+      
+      <!-- POPPER JS -->
+	  <script src="https://unpkg.com/@popperjs/core@2/dist/umd/popper.js"></script>
+      
+      <!-- LINKS PARA USO DO JQUERY -->
+      <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+      
+   	  <!-- LINK PARA OS ICONS DA PAGINA -->
+   	  <script src="https://kit.fontawesome.com/027e0b0de3.js" crossorigin="anonymous"></script>
+   	  <script src="../js/bibliotecas/font-awesome/027e0b0de3.js"></script>
+   	  
+   	  <!-- LINK PARA O JQUERY UI (DROPDOWN LIST COM SELECT DINÂMICO) -->
+   	  <script src="https://code.jquery.com/ui/1.13.1/jquery-ui.min.js" integrity="sha256-eTyxS0rkjpLEo16uXTS0uVCS4815lc40K2iVpWDvdSY=" crossorigin="anonymous"></script>
+   	  <link rel="stylesheet" href="https://code.jquery.com/ui/1.13.1/themes/base/jquery-ui.css">
+      
+      <!-- LINK PARA O JQUERY BLOCK UI(BLOQUEIO DE TELA QUANDO UMA REQUISIÇÃO É ENVIADA) -->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.blockUI/2.70/jquery.blockUI.js"></script>
+	  
+	  <!-- LINK PARA O JQUERY QUE MANIPULA COOKIES -->
+	  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.js"></script>
+	  
+	  <!-- LINK PARA JS E CSS DO SWEETALERT2 (FAZ OS ALERTAS QUE APARECEM NA TELA) -->
+	  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.7.5/dist/sweetalert2.all.min.js"></script>
+      <link href="https://cdn.jsdelivr.net/npm/sweetalert2@11.7.5/dist/sweetalert2.min.css" rel="stylesheet">
+	  
+	  <!-- CDN DATATABLES, FORMATAÇÃO DAS TABELAS -->
+	  <link rel="stylesheet" href="https://cdn.datatables.net/1.10.25/css/jquery.dataTables.min.css">
+	  <script src="https://cdn.datatables.net/1.10.25/js/jquery.dataTables.min.js"></script>
+	  <!--<script src="https://cdn.datatables.net/1.11.3/js/jquery.dataTables.min.js"></script>
+      <link rel="stylesheet" href="https://cdn.datatables.net/1.12.1/css/jquery.dataTables.min.css">-->
+	  
+	  <!-- BUTTONS CDN DATATABLES, IMPRIMIR VALORES DAS TABELAS -->
+	  <link rel="stylesheet" href="https://cdn.datatables.net/buttons/2.2.3/css/buttons.dataTables.min.css">
+	  <script src="https://cdn.datatables.net/buttons/2.2.3/js/dataTables.buttons.min.js"></script>
+	  <script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.1.3/jszip.min.js"></script>
+	  <script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.53/pdfmake.min.js"></script>
+	  <script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.53/vfs_fonts.js"></script>
+	  <script src="https://cdn.datatables.net/buttons/2.2.3/js/buttons.html5.min.js"></script>
+	  <script src="https://cdn.datatables.net/buttons/2.2.3/js/buttons.print.min.js"></script>
+	  
+	  <!-- SELECT2 -->
+	  <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
+	  <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
+	  
+	  <!-- INTRO JS -->
+	  <script src="https://cdnjs.cloudflare.com/ajax/libs/intro.js/7.0.1/intro.js"></script>
+	  <link href="https://cdnjs.cloudflare.com/ajax/libs/intro.js/7.0.1/introjs.css" rel="stylesheet" />
+	  
+	  <!-- ADICIONA O CABEÇALHO DE CADA PÁGINA NO HTML PRINCIPAL, OU SEJA, 
+	  FAZ OS IMPORTS DOS CSSs E JS (SE HOUVER) DE CADA PÁGINA INDIVIDUAL -->
+	  <th:block th:with="pagina=${pagina}" th:insert="~{${pagina.replaceAll('_pt_BR','')} :: head}"></th:block>
+	  
+   </head>
+   <body>
+
+      <div class="topbar">
+      
+      	USUARIO:&nbsp;
+      	<span id="cod-usuario"></span>
+      	<span>&nbsp;-&nbsp;</span>
+      	<span id="des-usuario"></span>
+      	
+      </div>
+
+      <div class="btn-hamburger">
+         <span class="fas fa-bars"></span>
+      </div>
+      
+      <nav class="sidebar">
+      
+         <a href="/menu" id="bem-vindo-menu">
+	         <div class="text">
+	            ERP RAÇÕES
+	         </div>
+         </a>
+         
+         <ul class="listaMenus">
+
+			<li id="usuarios-menu" class="">
+				<a href="#" class="menu-item">
+					<i class="fa-solid fa-user icon"></i>Pessoas
+					<span class="fas fa-caret-down" aria-hidden="true"></span>
+				</a>
+				<ul class="submenu-itens">
+					<li id="usuarios"><a href="/usuarios">Usuários</a>
+					</li>
+				</ul>
+			</li>
+
+			 <li id="projetos-menu" class="">
+				<a href="#" class="menu-item">
+					<i class="fa-solid fa-industry icon"></i>Fábrica
+					<span class="fas fa-caret-down" aria-hidden="true"></span>
+				</a>
+				<ul class="submenu-itens">
+					<li id="ingredientes"><a href="/ingredientes">Ingredientes</a>
+					<li id="receitas"><a href="/receitas">Receitas</a>
+					</li>
+				</ul>
+			</li>
+
+         	<!-- MENUS RENDERIZADOS DINAMICAMENTE PELO JS/JQUERY -->
+            <li class="logout"><a href="/logout"><i class="fa-solid fa-arrow-right-from-bracket icon"></i> LogOut</a></li>
+         </ul>
+         
+      </nav>
+
+      <!--Faz um replace do main do html da página da requisição HTTP e renderiza ela junto ao menu-->
+      <main class="content" th:with="pagina=${pagina}" th:replace="~{${pagina.replaceAll('_pt_BR','')} :: main}"></main>
+
+	  <script>
+		  let cookieValue = $.cookie('usuario');
+		  let cookieValue1 = cookieValue.split("-")[0];
+		  let cookieValue2 = cookieValue.split("-")[1];
+		  cookieValue2 = cookieValue2.replace(/_/g, " ");
+		  $("#cod-usuario").text(cookieValue1);
+		  $("#des-usuario").text(cookieValue2);
+	  </script>
+
+      <script>
+      <!--Quando o botão hamburger é clicado...-->
+         $('.btn-hamburger').click(function(){
+           $(this).toggleClass("click");
+           $('.sidebar').toggleClass("show");
+           $('main').toggleClass("active");
+         });
+         
+         //Quando o btn hamburger é fechado...
+         $(document).on("click", ".btn-hamburger:not(.click)", function(){
+        	$("li").removeClass("active");
+        	$('span').removeClass("rotate");
+        	$('nav ul .submenu-itens').removeClass("show1");
+       	 });
+         
+         $('nav').on('click', '.menu-item', function(){
+        	$(this).next('nav ul .submenu-itens').toggleClass("show1");
+        	$(this).find('span').toggleClass("rotate");
+        	$(this).parent().toggleClass("active");
+         });
+         
+      </script>
+      
+   </body>
+</html>

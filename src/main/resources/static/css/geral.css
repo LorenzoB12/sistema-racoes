@@ -1,0 +1,142 @@
+/*Cabeçalho do conteúdo da página (cabeçalho do main)*/
+.card-head {
+	padding: .75rem 1.25rem;
+	margin-bottom: 0;
+	background-color: rgba(0, 0, 0, .03);
+	border-bottom: 1px solid rgba(0, 0, 0, .125);
+}
+
+.card {
+	margin-top: 15px;
+	margin-bottom: 15px;
+	box-shadow: 3px 3px 7px rgba(0, 0, 0, 0.25);
+	border: 1px solid #ccc;
+}
+
+.img-icon {
+	transform: scale(1.5);
+}
+
+.read-only-branco {
+	height: 30px;
+	font-size: 11px;
+	background-color: transparent;
+	border: solid transparent;
+}
+
+.modal-xl-g {
+	max-width: 96%;
+}
+
+.dataTable {
+	width: 100% !important;
+}
+
+.dataTables_scrollHeadInner {
+	width: 100% !important;
+}
+
+tr.even td {
+	background-color: #f2f2f2;
+}
+
+tr.odd td {
+	background-color: #ffffff;
+}
+
+tr td {
+	text-align: center;
+}
+
+tr th {
+	text-align: center;
+}
+
+tr:not(:last-of-type) td {
+	border-bottom: 1px solid #ddd;
+}
+
+.input-perso {
+	height: 30px;
+	font-size: 11px;
+	word-wrap: break-word;
+}
+
+.input-perso2 {
+	height: 27px;
+	font-size: 12px;
+}
+
+.input-perso3 {
+	height: 30px;
+	font-size: 12px;
+	word-wrap: break-word;
+}
+
+.input-perso4 {
+	height: 27px;
+	font-size: 12px;
+	word-wrap: break-word;
+}
+
+.select-perso {
+	height: 27px;
+	font-size: 12px;
+}
+
+.select-perso2 {
+	height: 27px;
+	font-size: 12px;
+	width: 194px !important;
+}
+
+.select2-container .select2-results__option {
+	font-size: 11px;
+}
+
+.select-grande {
+	height: 150px !important;
+}
+
+.scroll-horiz-inactive::-webkit-scrollbar:horizontal {
+	display: none;
+}
+
+.scroll-vert-inactive::-webkit-scrollbar:vertical {
+	display: none;
+}
+
+.scroll-inactive::-webkit-scrollbar:vertical {
+	display: none;
+}
+
+/* Estilo da barra de rolagem */
+::-webkit-scrollbar {
+	width: 6px;
+	height: 9px;
+	background-color: #f0f0f0;
+	border-radius: 8px; /* Arredonda a barra de rolagem */
+}
+
+/* Estilo do thumb */
+::-webkit-scrollbar-thumb {
+	background-color: #cdcdcd;
+	border-radius: 8px; /* Arredonda o thumb */
+}
+
+/* Estilo do thumb quando estiver hover */
+::-webkit-scrollbar-thumb:hover {
+	background-color: #a6a6a6;
+}
+
+table.dataTable thead th, table.dataTable thead td {
+	border-bottom: 1px solid #b5b5b5 !important;
+}
+
+table.dataTable.no-footer {
+	border-bottom: .5px solid #b5b5b5 !important;
+}
+
+.input-center {
+	text-align: center;
+}
