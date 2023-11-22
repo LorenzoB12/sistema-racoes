@@ -46,10 +46,12 @@ tr.odd td {
 
 tr td {
 	text-align: center;
+	vertical-align: middle;
 }
 
 tr th {
 	text-align: center;
+    vertical-align: middle;
 }
 
 tr:not(:last-of-type) td {
@@ -139,4 +141,37 @@ table.dataTable.no-footer {
 
 .input-center {
 	text-align: center;
+}
+
+.swal2-actions{
+    gap: 15px;
+}
+
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.05);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+.blink-card {
+    animation: pulse 1s forwards; /* 1s de duração, encerra na última chave de animação */
+    transition: transform 0.3s ease-in-out; /* Adiciona uma transição suave */
+}
+
+.dataTables_wrapper .dataTables_length {
+    margin-bottom: 10px;
+}
+
+.dataTables_wrapper .dataTables_paginate {
+    margin-top: 10px;
+}
+
+.dataTables_wrapper .dataTables_info {
+    margin-top: 7px;
 }

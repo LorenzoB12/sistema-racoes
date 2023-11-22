@@ -1,4 +1,4 @@
-package br.com.busolli.lorenzo.demoSistemaRacoes.service.infra;
+package br.com.busolli.lorenzo.demoSistemaRacoes.service;
 
 import br.com.busolli.lorenzo.demoSistemaRacoes.model.Usuario;
 import br.com.busolli.lorenzo.demoSistemaRacoes.repository.UsuarioRepository;

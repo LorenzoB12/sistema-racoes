@@ -68,3 +68,11 @@ function iniciarTooltipClass(classe, title) {
 	});
 }
 
+function formatarDataBrParaUs(dataBr) {
+	var partes = dataBr.split('/');
+	if (partes.length !== 3) {
+		return null;
+	}
+	var dataUs = partes[2] + '-' + partes[1] + '-' + partes[0];
+	return dataUs;
+}

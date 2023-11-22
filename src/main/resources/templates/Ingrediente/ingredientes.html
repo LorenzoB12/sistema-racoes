@@ -11,16 +11,41 @@
         <div class="col-8">
             <div class="row">
                 <div class="col-12">
-                    <div class="card">
+                    <div class="card" id="card-cadastro-ingrediente">
                         <div class="card-head" id="card-head-form-cadastro">Cadastro de Ingrediente</div>
                         <div class="card-body" id="card-body-form-cadastro">
-                            <label class="form-label" for="input-des-ingrediente">Descrição:</label>
-                            <input id="input-des-ingrediente" class="form-control input-perso">
-                            <div class="row mt-3">
-                                <div class="col-12 d-flex justify-content-end">
-                                    <button class="btn btn-success btn-sm">Cadastrar</button>
+                            <div class="row">
+                                <div class="col-12">
+                                    <label class="form-label" for="input-des-ingrediente">* Descrição:</label>
+                                    <input id="input-des-ingrediente" class="form-control input-perso" type="text">
                                 </div>
                             </div>
+                            <div class="row mt-3">
+                                <div class="col-4">
+                                    <label class="form-label" for="input-num-lote">* Num Lote:</label>
+                                    <input id="input-num-lote" class="form-control input-perso" type="text">
+                                </div>
+                                <div class="col-4">
+                                    <label class="form-label" for="input-dta-validade">* Data Validade:</label>
+                                    <input id="input-dta-validade" class="form-control input-perso" type="date">
+                                </div>
+                                <div class="col-4">
+                                    <label class="form-label" for="input-ean">EAN (opcional):</label>
+                                    <input id="input-ean" class="form-control input-perso" type="number">
+                                </div>
+                            </div>
+                            <div class="row mt-3">
+                                <div class="col-6 d-flex justify-content-start">
+                                    <a hidden id="btn-refresh-cadastro" class="btn btn-danger btn-sm btn-block" role="button" data-toggle="modal" data-target="#confirm-modal">
+                                        <i class="fa-solid fa-arrows-rotate"></i>
+                                    </a>
+                                </div>
+                                <div class="col-6 d-flex justify-content-end">
+                                    <button id="btn-cadastrar-ingrediente" class="btn btn-success btn-sm">Cadastrar</button>
+                                    <button hidden id="btn-editar-ingrediente" class="btn btn-success btn-sm">Salvar Alteração</button>
+                                </div>
+                            </div>
+                            <input type="hidden" id="input-cod-ingrediente">
                         </div>
                     </div>
                 </div>
@@ -40,14 +65,37 @@
                 <hr class="hr" />
             </div>
         </div>
-        <div class="row mt-5">
+        <div class="row mt-3">
             <div class="col-2"></div>
             <div class="col-8">
-                <table id="table-ingredientes"></table>
+                <div class="row mt-3">
+                    <table id="table-ingredientes"
+                           class="table"
+                           style="width: 100%"> <!-- class='table-sm table-striped table-bordered nowrap'"-->
+                        <thead class="thead-dark">
+                            <tr>
+                                <th scope="col">#</th>
+                                <th scope="col">Des Ingrediente</th>
+                                <th scope="col">Num Lote</th>
+                                <th scope="col">Dta Validade</th>
+                                <th scope="col">Cod Ean</th>
+                                <th scope="col">Editar</th>
+                                <th scope="col">Excluir</th>
+                            </tr>
+                        </thead>
+                    </table>
+                </div>
             </div>
             <div class="col-2"></div>
         </div>
     </div>
+
+    <script src="../js/uteis/alertas.js"></script>
+    <script src="../js/uteis/geral.js"></script>
+    <script src="../js/ingredientes/rest-ingredientes.js"></script>
+    <script src="../js/ingredientes/eventos-ingredientes.js"></script>
+    <script src="../js/ingredientes/acoes-ingredientes.js"></script>
+    <script src="../js/ingredientes/tabela-ingredientes.js"></script>
 </main>
 </body>
 </html>
