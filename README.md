@@ -64,7 +64,7 @@ Pré-requisitos:
     - url = jdbc:mysql://localhost:3306/racoes?useTimezone=true&serverTimezone=America/Sao_Paulo&useSSL=false
     - username = root
     - password= root
-- Executar o script de criação das tabelas armazenado no seguinte diretório ()
+- Executar o script de criação das tabelas armazenado no seguinte diretório (https://github.com/LorenzoB12/sistema-racoes/blob/main/sistema.sql)
 
 ## Login no Sistema
 Após a execução da aplicação acessar o seguinte link (http://localhost:8080/login)
