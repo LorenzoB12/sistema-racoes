@@ -67,7 +67,7 @@ Pré-requisitos:
 - Executar o script de criação das tabelas armazenado no seguinte diretório (https://github.com/LorenzoB12/sistema-racoes/blob/main/sistema.sql)
 
 ## Login no Sistema
-Após a execução da aplicação acessar o seguinte link (http://localhost:8080/login)
+Após a execução da aplicação acessar o seguinte link (http://localhost:8080/login)  
 Utilizar as seguintes credenciais inicialmente:
 - User: ADMIN
 - Senha: 123456
