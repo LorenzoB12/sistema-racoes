@@ -39,8 +39,8 @@ A aplicação consiste em realizar dois cadastros base e fazer sua relação atr
 Pré-requisitos: 
 - Java 17
 - Maven
-- Variáveis de ambiente Java - vídeo explicativo ()
-- Variáveis de ambiente Maven - vídeo explicativo ()
+- Variáveis de ambiente Java - vídeo explicativo (https://www.youtube.com/watch?v=_RlftGYiAn8)
+- Variáveis de ambiente Maven - vídeo explicativo (https://www.youtube.com/watch?v=XxpotPelAIY)
 
 ```bash
 # clonar repositório
