@@ -46,35 +46,30 @@ A aplicação consiste em realizar dois cadastros base e fazer sua relação atr
 # Como executar o projeto
 
 ## Back end
-Pré-requisitos: Java 11
+Pré-requisitos: 
+- Java 17
+- Maven
+- Variáveis de ambiente Java - vídeo explicativo ()
+- Variáveis de ambiente Maven - vídeo explicativo ()
 
 ```bash
 # clonar repositório
-git clone https://github.com/devsuperior/sds1-wmazoni
+git clone https://github.com/LorenzoB12/sistema-racoes
 
 # entrar na pasta do projeto back end
-cd backend
+cd demoSistemaRacoes
 
 # executar o projeto
 ./mvnw spring-boot:run
 ```
 
-## Front end web
-Pré-requisitos: npm / yarn
+## Front end
+Pré-requisitos: 
+- Navegador Web
 
-```bash
-# clonar repositório
-git clone https://github.com/devsuperior/sds1-wmazoni
+## Banco de Dados
+Pré-requisitos:
 
-# entrar na pasta do projeto front end web
-cd front-web
-
-# instalar dependências
-yarn install
-
-# executar o projeto
-yarn start
-```
 
 # Autor
 
