@@ -77,5 +77,4 @@ Lorenzo Busolli
 https://www.linkedin.com/in/lorenzo-busolli/
 
 Acredito ter suprido todas as demandas solicitadas no projeto sendo que toda a explicação para rodar a aplicação está no texto acima.  
-Caso houverem dúvidas sobre a instalação, sobre qualquer processo do deploy da aplicação ou de como fazer seu uso, por favor, entre em contato!  
-Desde já, agradeço!
+Caso houverem dúvidas sobre a instalação, sobre qualquer processo do deploy da aplicação ou de como fazer seu uso, por favor, entre em contato. Desde já, agradeço!
