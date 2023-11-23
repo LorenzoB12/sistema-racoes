@@ -1,37 +1,43 @@
-# ERP Rações 
+<!--# ERP Rações -->
 <!--[![NPM](https://img.shields.io/npm/l/react)](https://github.com/devsuperior/sds1-wmazoni/blob/master/LICENSE) -->
 
 # Sobre o projeto
 
 <!--https://wmazoni-sds1.netlify.app-->
 
-Big Game Survey é uma aplicação full stack web e mobile construída durante a 1ª edição da **Semana DevSuperior** (#sds1), evento organizado pela [DevSuperior](https://devsuperior.com "Site da DevSuperior").
+ERP Rações é uma aplicação full stack web desenvolvida na plataforma do framework Spring Java. 
 
-A aplicação consiste em uma pesquisa de preferência de games, onde os dados são coletados no app mobile, e depois são listados no app web, que também apresenta um dashboard com gráficos baseados nestes dados.
+A aplicação consiste em realizar dois cadastros base e fazer sua relação através de um cadastro de receitas que possuem ingredientes ordenados.
 
-## Layout mobile
-![Mobile 1](https://github.com/acenelio/assets/raw/main/sds1/mobile1.png) ![Mobile 2](https://github.com/acenelio/assets/raw/main/sds1/mobile2.png)
+## Tela de Login
+![Layout do Cadastro e Listagem de Ingredientes](https://github.com/LorenzoB12/assests/blob/main/TELA%20DE%20LOGIN.png)
 
-## Layout web
-![Web 1](https://github.com/acenelio/assets/raw/main/sds1/web1.png)
+## Layout do Cadastro e Listagem de Ingredientes
+![Layout do Cadastro e Listagem de Ingredientes](https://github.com/LorenzoB12/assests/blob/main/CADASTRO%20INGREDIENTES.png)
 
-![Web 2](https://github.com/acenelio/assets/raw/main/sds1/web2.png)
+## Layout do Cadastro e Listagem de Receitas
+![Layout do Cadastro de Ingredientes](https://github.com/LorenzoB12/assests/blob/main/CADASTRO.png)  
+![Layout da Listagem de Ingredientes](https://github.com/LorenzoB12/assests/blob/main/LISTAGEM.png)
 
-## Modelo conceitual
-![Modelo Conceitual](https://github.com/acenelio/assets/raw/main/sds1/modelo-conceitual.png)
+## Modelo conceitual do Banco de Dados
+![Modelo Conceitual do Banco de Dados](https://github.com/LorenzoB12/assests/blob/main/MODELO%20BD%20RA%C3%87%C3%95ES.png)
 
 # Tecnologias utilizadas
 ## Back end
 - Java
 - Spring Boot
+- Spring Data
+- Spring Valid
 - JPA / Hibernate
 - Maven
+- Thymeleaf
 ## Front end
-- HTML / CSS / JS / TypeScript
-- ReactJS
-- React Native
-- Apex Charts
-- Expo
+- HTML / CSS / JS
+- Jquery
+- Bibliotecas JS/CSS (Datatables, Bootstrap)
+- ## Banco de Dados
+- MySql
+
 ## Implantação em produção
 - Back end: Heroku
 - Front end web: Netlify
