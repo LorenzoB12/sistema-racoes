@@ -60,7 +60,7 @@ Pré-requisitos:
 ## Banco de Dados
 Pré-requisitos:
 - Baixar e instalar o banco de dados MySql
-- Configurar uma instância do banco de dados para as seguintes propriedades:
+- Configurar uma instância do banco de dados para as seguintes propriedades (nome da instância: 'racoes'):
     - url = jdbc:mysql://localhost:3306/racoes?useTimezone=true&serverTimezone=America/Sao_Paulo&useSSL=false
     - username = root
     - password= root
