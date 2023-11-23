@@ -7,6 +7,7 @@
 </head>
 <body>
 <main>
+
     <div class="row">
         <div class="col-2"></div>
         <div class="col-8">
@@ -104,6 +105,37 @@
         </div>
     </div>
 
+    <div class="modal fade" id="modal-reordenar-ingredientes-receitas" data-bs-backdrop="static">
+        <div class="modal-dialog modal-tamanho-perso draggable-modal">
+            <div class="modal-content">
+                <div class="modal-header draggable-modal-header justify-content-center">
+                    <h6 class="modal-title">Alteração de Ordem</h6>
+                    <button id="" type="button" class="btn btn-close close" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="row">
+                        <input type="hidden" id="cod-receita-reordenacao">
+                    </div>
+                    <div class="row">
+                        <div class="col-12 text-center" id="div-select2-ingredientes-receitas">
+                            <select id="select-reordernar-ingredientes-receitas" multiple="multiple" style="height: 500px!important" disabled>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer justify-content-center">
+                    <div class="row">
+                        <div class="col-12 text-center">
+                            <button id="btn-reordenar-itens-receita" class="btn btn-success btn-sm">Reordenar Ingredientes da Receita</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <script src="../js/uteis/formatador.js"></script>
     <script src="../js/uteis/alertas.js"></script>
     <script src="../js/uteis/geral.js"></script>
     <script src="../js/receitas/rest-receitas.js"></script>

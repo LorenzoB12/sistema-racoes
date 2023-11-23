@@ -18,10 +18,7 @@ public class LoginInterceptorAppConfig implements WebMvcConfigurer{
 						,"/js-frameworks/**"
 						,"/templates/**"
 						,"/static/**"
-						,"/loginAntigo/**"
-						,"/buscarLotesDisponiveisSimAntigo/**"
-						,"/trocarSituacaoPedidoRefrigeradoParaProntoParaFaturar/**"
-						,"/buscarCreditoEPagamentoClientes/**");
+						,"/loginAntigo/**");
 	}
 	
 }

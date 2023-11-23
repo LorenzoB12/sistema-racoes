@@ -17,10 +17,13 @@ function construirTabelaReceitaIngredientes(idReceita){
         },
 
         columns : [
+            {data : 'numSeq', className : "hidden"},
             {data : 'numOrdem'},
             {data : 'codIngrediente.codIngrediente'},
             {data : 'codIngrediente.desIngrediente'},
-            {data : 'qtdKgs'},
+            {data : 'qtdKgs', "render": function(qtdKgs){
+                return formatarNumero(qtdKgs);
+            }},
             {orderable : false,	data : 'numSeq', "render" :
                 function(id) {
                     return '<a class="btn btn-primary btn-sm btn-block btn-editar-receita-ingrediente" id="'
@@ -36,12 +39,11 @@ function construirTabelaReceitaIngredientes(idReceita){
         ],
         columnDefs: [
             {
-                targets: [0, 1, 2, 3, 4, 5],
+                targets: [0, 1, 2, 3, 4, 5, 6],
                 className: 'tabela-menor'
             }
-        ]
-
-        ,"language": {
+        ],
+        "language": {
                 "decimal": ",",
                 "thousands": ".",
                 "sEmptyTable": "Nenhum ingrediente cadastrado",

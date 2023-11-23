@@ -1,5 +1,3 @@
-
-
 //BUSCAR USUÁRIOS ATIVOS
 function buscarUsuarios(){
     $.ajax({
@@ -10,19 +8,19 @@ function buscarUsuarios(){
                 construirTabelaUsuarios(response);
             },
             400: function(response) {
-                //console.log(400);
+                alert("Erro 400 - Favor contatar o setor de TI");
             },
             401: function(response) {
-                //console.log(401);
+                alert("Erro 401 - Favor contatar o setor de TI");
             },
             404: function(response) {
-                //console.log(404);
+                alert("Erro 404 - Favor contatar o setor de TI");
             },
             405: function(response) {
-                //console.log(405);
+                alert("Erro 405 - Favor contatar o setor de TI");
             },
             500: function(response) {
-                alert("Erro no servidor - Favor contatar o setor de TI");
+                alert("Erro 500 - Favor contatar o setor de TI");
             }
         }
     })
@@ -48,28 +46,25 @@ function cadastrarUsuario(){
         dataType: "json",
         data: JSON.stringify(obj),
         statusCode: {
-            200: function(response) {
-                //console.log(200)
-            },
             201: function(response) {
                 buscarUsuarios();
                 reinicarTelaCadastroUsuarios();
                 alertSucesso("Usuário cadastrado com sucesso!")
             },
             400: function(response) {
-                avisoNegacao(response.responseText);
+                avisoNegacao("Ação inválida! Tente novamente.");
             },
             401: function(response) {
-                //console.log(401);
+                alert("Erro 401 - Favor contatar o setor de TI");
             },
             404: function(response) {
-                //console.log(404);
+                alert("Erro 404 - Favor contatar o setor de TI");
             },
             405: function(response) {
-                //console.log(405);
+                alert("Erro 405 - Favor contatar o setor de TI");
             },
             500: function(response) {
-                alert("Erro no servidor - Favor contatar o setor de TI");
+                alert("Erro 500 - Favor contatar o setor de TI");
             }
         }
     })
@@ -81,30 +76,24 @@ function excluirUsuario(id){
         url: "usuario/excluir/" + id,
         method: "DELETE",
         statusCode: {
-            200: function(response) {
-                //console.log(200)
-            },
-            201: function(response) {
-                //console.log(201)
-            },
             204: function(response) {
                 buscarUsuarios()
                 alertSucesso("Usuário inativado!")
             },
             400: function(response) {
-                //console.log(400);
+                alert("Erro 400 - Favor contatar o setor de TI");
             },
             401: function(response) {
-                //console.log(401);
+                alert("Erro 401 - Favor contatar o setor de TI");
             },
             404: function(response) {
-                //console.log(404);
+                alert("Erro 404 - Favor contatar o setor de TI");
             },
             405: function(response) {
-                //console.log(405);
+                alert("Erro 405 - Favor contatar o setor de TI");
             },
             500: function(response) {
-                alert("Erro no servidor - Favor contatar o setor de TI");
+                alert("Erro 500 - Favor contatar o setor de TI");
             }
         }
     })
@@ -137,26 +126,20 @@ function enviarDadosEdicaoUsuario(){
                 reinicarTelaCadastroUsuarios();
                 alertSucesso("Usuário editado com sucesso!")
             },
-            201: function(response) {
-                //console.log(201)
-            },
-            204: function(response) {
-                //console.log(204)
-            },
             400: function(response) {
-                //console.log(400);
+                avisoNegacao("Ação inválida! Tente novamente.");
             },
             401: function(response) {
-                //console.log(401);
+                alert("Erro 401 - Favor contatar o setor de TI");
             },
             404: function(response) {
-                //console.log(404);
+                alert("Erro 404 - Favor contatar o setor de TI");
             },
             405: function(response) {
-                //console.log(405);
+                alert("Erro 405 - Favor contatar o setor de TI");
             },
             500: function(response) {
-                alert("Erro no servidor - Favor contatar o setor de TI");
+                alert("Erro 500 - Favor contatar o setor de TI");
             }
         }
     })

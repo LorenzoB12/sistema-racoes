@@ -8,6 +8,8 @@ import java.math.BigDecimal;
 
 public record EditarReceitaIngredienteDTO(
         @NotNull
+        Long numSeq,
+        @NotNull
         Long codReceita,
         @NotNull
         Long codIngrediente,

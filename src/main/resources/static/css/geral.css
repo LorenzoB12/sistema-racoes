@@ -217,3 +217,7 @@ table.dataTable.no-footer {
 .form-control{
     font-size: 0.75rem!important;
 }
+
+.draggable-modal-header{
+    cursor: move;
+}

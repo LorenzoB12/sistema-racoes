@@ -8,6 +8,11 @@ $(function(){
     detectaClickBotaoSalvarEdicao();
     detectaClickBotaoExcluirReceita();
     detectaClickEditarReceitaIngrediente();
+    detectaClickBotaoAbrirModalReordenarReceitas();
+    detectaClickBotaoReordenarReceitas();
+    detectaClickBotaoSalvarEdicaoIngredienteReceita();
+    detectaClickBotaoExcluirIngredienteReceita();
+    detectaClickBotaoRefreshCadastroIngredientesReceita();
 })
 
 const detectaClickCadastrarReceita = () => {
@@ -19,7 +24,7 @@ const detectaClickCadastrarReceita = () => {
 }
 
 const detectaClickAdicionarIngredienteReceita = () => {
-    $("#table-receitas").on("click", ".btn-editar-ingrediente", function(){
+    $("#table-receitas").on("click", ".btn-adicionar-ingrediente", function(){
         let codReceita = $(this).parent().parent().attr("id");
         let codIngrediente = $("#select-ingrediente-" + codReceita).val();
         let qtdKgs = $("#input-peso-ingrediente-" + codReceita).val();
@@ -70,7 +75,6 @@ const detectaClickBotaoSalvarEdicao = () => {
     $("#btn-salvar-edicao-receita").click(function(){
         let codReceita = $("#input-cod-receita-hidden").val();
         let desReceita = $("#input-nome-receita").val();
-        console.log( {codReceita, desReceita} )
         editarReceita( {codReceita, desReceita} )
     })
 }
@@ -78,8 +82,7 @@ const detectaClickBotaoSalvarEdicao = () => {
 const detectaClickBotaoExcluirReceita = () => {
     $("#table-receitas").on("click", ".btn-excluir-receita", function(){
         let id = $(this).attr("id");
-        console.log(id)
-        confirmaAcaoExecutaFuncao("Inativar Ingrediente", `Você deseja excluir a receita ${id} e todos os seus ingredientes?`, "Sim", "Não",
+        confirmaAcaoExecutaFuncao("Excluir Receita", `Você deseja excluir a receita ${id} e todos os seus ingredientes?`, "Sim", "Não",
                                   "Operação cancelada!", `Receita ${id} não alterada`, () => excluirReceita(id))
     })
 }
@@ -87,11 +90,59 @@ const detectaClickBotaoExcluirReceita = () => {
 const detectaClickEditarReceitaIngrediente = () => {
     $("#table-receitas").on("click", ".btn-editar-receita-ingrediente", function(){
         let linha = $(this).parent().parent();
+        let numSeq = linha.find("td:nth-child(1)").text();
         let codReceita = linha.parent().parent().attr("id").split("table-receita-ingrediente-")[1];
-        let numOrdem = linha.find("td:nth-child(1)").text();
-        let codIngrediente = linha.find("td:nth-child(2)").text();
-        let qtdKgs = linha.find("td:nth-child(4)").text();
+        let numOrdem = linha.find("td:nth-child(2)").text();
+        let codIngrediente = linha.find("td:nth-child(3)").text();
+        let qtdKgs = formatarNumeroParaUs(linha.find("td:nth-child(5)").text());
 
-        console.log({codReceita, numOrdem, codIngrediente, qtdKgs})
+        $("#input-num-seq-edicao-item-receita-" + codReceita).val(numSeq);
+        $("#input-peso-ingrediente-" + codReceita).val(qtdKgs);
+        $("#select-ingrediente-" + codReceita).val(codIngrediente).change();
+        $("#btn-adicionar-ingrediente-" + codReceita).attr("hidden", true);
+        $("#btn-confirmar-edicao-ingrediente-" + codReceita).attr("hidden", false);
+        $("#btn-refresh-cadastro-ingrediente-receita-" + codReceita).parent().attr("hidden", false);
+    })
+}
+
+const detectaClickBotaoAbrirModalReordenarReceitas = () => {
+    $("#table-receitas").on("click", ".btn-abrir-modal-reordenar-ingredientes-receita", function(){
+        let codReceita = $(this).attr("id").split("btn-abrir-modal-reordenar-ingredientes-receita-")[1];
+        $("#cod-receita-reordenacao").val(codReceita);
+        listarItensReceita(codReceita);
+        abrirFecharModal("#modal-reordenar-ingredientes-receitas");
+    })
+}
+
+const detectaClickBotaoReordenarReceitas = () => {
+    $("#btn-reordenar-itens-receita").click(function(){
+        let codReceita = $("#cod-receita-reordenacao").val();
+        let ordemIngredientes = $("#select-reordernar-ingredientes-receitas").val();
+        confirmaAcaoExecutaFuncao("Alterar Ordem da Receita", `Você confirma que verificou a ordem da receita?`, "Sim", "Não",
+                                          "Operação cancelada!", `Receita ${codReceita} não alterada`, () => reordenarIngredientesNaReceita( {codReceita, ordemIngredientes} ))
+    })
+}
+
+const detectaClickBotaoSalvarEdicaoIngredienteReceita = () => {
+    $("#table-receitas").on("click", ".btn-confirmar-edicao-ingrediente", function(){
+        let codReceita = $(this).attr("id").split("btn-confirmar-edicao-ingrediente-")[1];
+        let numSeq = $("#input-num-seq-edicao-item-receita-" + codReceita).val();
+        let codIngrediente = $("#select-ingrediente-" + codReceita).val();
+        let qtdKgs = $("#input-peso-ingrediente-" + codReceita).val();
+        editarReceitaIngrediente({codReceita, numSeq, codIngrediente, qtdKgs})
+    });
+}
+
+const detectaClickBotaoExcluirIngredienteReceita = () => {
+    $("#table-receitas").on("click", ".btn-excluir-receita-ingrediente", function(){
+        let numSeq = $(this).attr("id");
+        deletarReceitaIngrediente(numSeq);
+    })
+}
+
+const detectaClickBotaoRefreshCadastroIngredientesReceita = () => {
+    $("#table-receitas").on("click", ".btn-refresh-cadastro-ingrediente-receita", function(){
+        let codReceita = $(this).attr("id").split("btn-refresh-cadastro-ingrediente-receita-")[1];
+        limparCamposAposCadastroReceitaIngrediente(codReceita);
     })
 }

@@ -13,3 +13,35 @@ function somenteNumeros(n){
 	return n;
 	
 }
+
+function formatarNumero(number) {
+  if (number == null || number == undefined) {
+    return "";
+  }
+
+  // Arredonda o número para 2 casas decimais e converte para string
+  const formattedNumber = Number(number).toFixed(2);
+
+  // Separa as partes inteira e decimal
+  const [integerPart, decimalPart] = formattedNumber.split(".");
+
+  // Formata a parte inteira com pontos a cada 3 dígitos
+  const formattedIntegerPart = integerPart.replace(/\B(?=(\d{3})+(?!\d))/g, ".");
+
+  // Retorna o número formatado com vírgula como separador decimal
+  return `${formattedIntegerPart},${decimalPart}`;
+}
+
+function formatarNumeroParaUs(number) {
+  if (number == null || number == undefined) {
+    return "";
+  }
+
+  // Remove os pontos de milhares e substitui a vírgula por ponto
+  const cleanedNumberString = number.toString().replace(/\./g, "").replace(",", ".");
+
+  // Converte a string formatada para um número
+  const formattedNumber = Number(cleanedNumberString);
+
+  return formattedNumber;
+}

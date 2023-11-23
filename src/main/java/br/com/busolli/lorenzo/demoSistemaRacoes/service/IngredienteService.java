@@ -40,11 +40,13 @@ public class IngredienteService {
 
     @Transactional(readOnly = true)
     public List<Ingrediente> buscarIngredientesAtivos(){
+
         return repo.findAllByIndAtivoTrue();
     }
 
     @Transactional(readOnly = false)
     public void inativarIngrediente(Long id) {
+
         repo.findById(id).get().setIndAtivo(Boolean.FALSE);
     }
 
@@ -57,6 +59,7 @@ public class IngredienteService {
 
     @Transactional(readOnly = true)
     private Optional<Ingrediente> buscarIngredientePorId(Long id){
+
         return repo.findById(id);
     }
 }

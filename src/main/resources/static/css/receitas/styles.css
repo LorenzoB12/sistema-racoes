@@ -39,3 +39,63 @@ tr th.tabela-menor{
 #card-head-collapse-receitas{
     cursor: pointer;
 }
+
+
+/*/SELECT REORDENAÇÃO DOS INGREDIENTES DAS RECEITAS*/
+
+#div-select2-ingredientes-receitas .select2-selection.select2-selection--multiple{
+    width: 400px!important;
+    height: 500px!important;
+}
+
+#div-select2-ingredientes-receitas .select2-search.select2-search--inline{
+    width: 400px!important;
+    height: 500px!important;
+}
+
+#div-select2-ingredientes-receitas .select2.select2-container.select2-container{
+    width: 400px!important;
+    height: 500px!important;
+}
+
+#div-select2-ingredientes-receitas .select2-selection__choice:hover{
+    cursor: pointer;
+}
+
+#div-select2-ingredientes-receitas .select2-selection__rendered:hover{
+    cursor: pointer;
+}
+
+#div-select2-ingredientes-receitas .select2-selection:hover{
+    cursor: pointer;
+}
+
+#div-select2-ingredientes-receitas .select2-selection__choice__display:hover{
+    cursor: pointer!important;
+}
+
+#div-select2-ingredientes-receitas .select2-selection__choice__remove{
+    cursor: pointer!important;
+}
+
+#div-select2-ingredientes-receitas .select2-container--default .select2-selection--multiple .select2-selection__choice {
+    background-color: #e4e4e4;
+    border: 1px solid #aaa;
+    border-radius: 4px;
+    box-sizing: border-box;
+    display: block !important;
+    margin-left: 5px;
+    margin-top: 5px;
+    padding: 0;
+    padding-left: 20px;
+    position: relative;
+    max-width: 100%;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    vertical-align: bottom;
+    white-space: nowrap;
+}
+
+.hidden{
+    display: none;
+}

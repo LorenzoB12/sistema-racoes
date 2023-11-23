@@ -1,9 +1,11 @@
 package br.com.busolli.lorenzo.demoSistemaRacoes.model;
 
 import br.com.busolli.lorenzo.demoSistemaRacoes.dto.receitaIngrediente.CadastroReceitaIngredienteDTO;
+import br.com.busolli.lorenzo.demoSistemaRacoes.dto.receitaIngrediente.EditarReceitaIngredienteDTO;
 import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.NonNull;
+import lombok.Setter;
 
 import java.math.BigDecimal;
 import java.time.LocalDateTime;
@@ -28,6 +30,7 @@ public class ReceitaIngrediente {
     private Ingrediente codIngrediente;
 
     @NonNull
+    @Setter
     private Integer numOrdem;
 
     @NonNull
@@ -52,5 +55,10 @@ public class ReceitaIngrediente {
         this.qtdKgs = dto.qtdKgs();
         this.dthInclusao = LocalDateTime.now();
         this.codUsuarioInclusao = usuario;
+    }
+
+    public void atualizarReceitaIngrediente(EditarReceitaIngredienteDTO dto, Ingrediente ingrediente) {
+        this.codIngrediente = ingrediente;
+        this.qtdKgs = dto.qtdKgs();
     }
 }

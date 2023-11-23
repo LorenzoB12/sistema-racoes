@@ -139,10 +139,11 @@ function construirTelaIngredientesReceita(event, table){
     setTimeout(() => buscarIngredientesParaReceita(idReceita), 200);
 }
 
-function generateChildContent(/*rowId, response,*/ idReceita) {
-    let childContent = '<table style="width: 100%!important; margin-top:25px;" class="table-receita-ingrediente" id="table-receita-ingrediente-' + idReceita + '">'
+function generateChildContent(/*rowId, response,*/ codReceita) {
+    let childContent = '<table style="width: 100%!important; margin-top:25px;" class="table-receita-ingrediente" id="table-receita-ingrediente-' + codReceita + '">'
     childContent += '<thead>'
     childContent += '<tr>'
+    childContent += '<th class="hidden">Num Seq</th>'
     childContent += '<th>Ordem</th>'
     childContent += '<th>Cod Ingrediente</th>'
     childContent += '<th>Des Ingrediente</th>'
@@ -153,15 +154,31 @@ function generateChildContent(/*rowId, response,*/ idReceita) {
     childContent += '</thead>'
     childContent += '</table>'
 
-    childContent += '<div class="child row" style="margin-top:15px; margin-bottom:60px;" id="' + idReceita + '"';
+    childContent += '<div class="child row" style="margin-top:15px; margin-bottom:60px;" id="' + codReceita + '"';
     childContent += '<div class="row d-flex justify-content-end">'
-    childContent += '<div class="col-1 d-flex align-items-center">'
-    childContent += '<a class="btn btn-success btn-sm btn-block btn-editar-ingrediente" style="margin-left: 3.15rem;"'
+    childContent += '<div class="col-1 align-items-center text-center">'
+
+    childContent += '<a class="btn btn-success btn-sm btn-block btn-adicionar-ingrediente" id="btn-adicionar-ingrediente-' + codReceita + '"'
     childContent += 'role="button" data-toggle="modal" data-target="#confirm-modal"><i class="fa-solid fa-plus"></i></a>'
+
+    childContent += '<a hidden class="btn btn-success btn-sm btn-block btn-confirmar-edicao-ingrediente" id="btn-confirmar-edicao-ingrediente-' + codReceita + '"'
+    childContent += 'role="button" data-toggle="modal" data-target="#confirm-modal"><i class="fa-regular fa-floppy-disk"></i></a>'
+
     childContent += '</div>'
-    childContent += '<div class="col-1" id="div-select-num-ordem-' + idReceita + '"></div>' //num ordem
-    childContent += '<div class="col-7" id="div-select-ingrediente-' + idReceita + '"></div>' //select ingrediente
-    childContent += '<div class="col-3" id="div-peso-ingrediente-' + idReceita + '"></div>' //peso ingrediente
+
+    childContent += '<div class="col-1 align-items-center text-center">'
+    childContent += '<a class="btn-abrir-modal-reordenar-ingredientes-receita" id="btn-abrir-modal-reordenar-ingredientes-receita-' + codReceita + '"'
+    childContent += 'role="button" data-toggle="modal" data-target="#confirm-modal">'
+    childContent += '<input type="image" src="../icons/reorder.png" class="reordenar-ingredientes-receita"></a>'
+    childContent += '</div>'
+
+    childContent += '<div class="col-7" id="div-select-ingrediente-' + codReceita + '"></div>' //select ingrediente
+    childContent += '<div class="col-3" id="div-peso-ingrediente-' + codReceita + '"></div>' //peso ingrediente
+    childContent += '<div class="col-1 align-items-center text-center" style="margin-top: 10px;" hidden>'
+    childContent += '<a class="btn btn-danger btn-sm btn-block btn-refresh-cadastro-ingrediente-receita" id="btn-refresh-cadastro-ingrediente-receita-' + codReceita + '"'
+    childContent += 'role="button" data-toggle="modal" data-target="#confirm-modal"><i class="fa-solid fa-arrows-rotate"></i></a>'
+    childContent += '</div>'
+    childContent += '<input type="hidden" id="input-num-seq-edicao-item-receita-' + codReceita + '">'
     childContent += '</div>'
     childContent += '</div>';
     return childContent;

@@ -44,8 +44,6 @@
 	  <!-- CDN DATATABLES, FORMATAÇÃO DAS TABELAS -->
 	  <link rel="stylesheet" href="https://cdn.datatables.net/1.10.25/css/jquery.dataTables.min.css">
 	  <script src="https://cdn.datatables.net/1.10.25/js/jquery.dataTables.min.js"></script>
-	  <!--<script src="https://cdn.datatables.net/1.11.3/js/jquery.dataTables.min.js"></script>
-      <link rel="stylesheet" href="https://cdn.datatables.net/1.12.1/css/jquery.dataTables.min.css">-->
 	  
 	  <!-- BUTTONS CDN DATATABLES, IMPRIMIR VALORES DAS TABELAS -->
 	  <link rel="stylesheet" href="https://cdn.datatables.net/buttons/2.2.3/css/buttons.dataTables.min.css">
@@ -67,11 +65,11 @@
 	  <!-- MOMENT.JS -->
 	  <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.22.2/moment-with-locales.min.js"></script>
 
-	  <script src="https://cdnjs.cloudflare.com/ajax/libs/Sortable/1.14.0/Sortable.min.js"></script>
+	   <!-- Select2Sortable -->
+	   <script src="../js/bibliotecas/select2-sortable/select2-sortable.js"></script>
 
 	   <!-- ADICIONA O CABEÇALHO DE CADA PÁGINA NO HTML PRINCIPAL, OU SEJA,
        FAZ OS IMPORTS DOS CSSs E JS (SE HOUVER) DE CADA PÁGINA INDIVIDUAL -->
-
 	  <th:block th:with="pagina=${pagina}" th:insert="~{${pagina.replaceAll('_pt_BR','')} :: head}"></th:block>
 	  
    </head>

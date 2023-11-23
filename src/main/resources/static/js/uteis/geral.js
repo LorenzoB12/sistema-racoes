@@ -77,17 +77,31 @@ function formatarDataBrParaUs(dataBr) {
 	return dataUs;
 }
 
-function formatarNumero(number) {
-	if(number == null || number == undefined){
-		return "";
-	}
+const permitirMoverModal = () => {
+$(document).ready(function() {
+      var isDragging = false;
+      var offset = { x: 0, y: 0 };
 
-	// Converte o número para uma string e separa os decimais
-	const parts = number.toString().split(".");
+      $('.modal-header').on('mousedown', function(e) {
+        isDragging = true;
+        offset = {
+          x: e.clientX - $('.draggable-modal').offset().left,
+          y: e.clientY - $('.draggable-modal').offset().top
+        };
+      });
 
-	// Formata a parte inteira com pontos a cada 3 dígitos
-	parts[0] = parts[0].replace(/\B(?=(\d{3})+(?!\d))/g, ".");
+      $(document).on('mouseup', function() {
+        isDragging = false;
+      });
 
-	// Retorna o número formatado com vírgula como separador decimal
-	return parts.join(",");
+      $(document).on('mousemove', function(e) {
+        if (!isDragging) return;
+
+        $('.draggable-modal').offset({
+          left: e.clientX - offset.x,
+          top: e.clientY - offset.y
+        });
+      });
+    });
 }
+

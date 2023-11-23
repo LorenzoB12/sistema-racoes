@@ -1,6 +1,7 @@
 $(function() {
     moment.locale("pt-BR");
     alterarAberturaFechamentoCollapseCardConsulta();
+    permitirMoverModal();
 })
 
 const construirSelectListAdicionarItemReceita = (response, idReceita) => {
@@ -37,8 +38,12 @@ const limparCamposAposCadastroReceita = () => {
     $("#btn-cadastrar-receita").attr("hidden", false);
 }
 
-const limparCamposAposCadastroReceitaIngrediente = (id) => {
-    $("#input-peso-ingrediente-" + id).val("");
+const limparCamposAposCadastroReceitaIngrediente = (codReceita) => {
+    $("#input-peso-ingrediente-" + codReceita).val("");
+    $("#input-num-seq-edicao-item-receita-" + codReceita).val("");
+    $("#btn-adicionar-ingrediente-" + codReceita).attr("hidden", false);
+    $("#btn-confirmar-edicao-ingrediente-" + codReceita).attr("hidden", true);
+    $("#btn-refresh-cadastro-ingrediente-receita-" + codReceita).parent().attr("hidden", true);
 }
 
 const alterarAberturaFechamentoCollapseCardConsulta = () => {
@@ -54,4 +59,17 @@ const piscarTelaCadastro = () => {
     window.scroll(0, 0);
     $("#card-cadastro-receita").addClass("blink-card");
     setTimeout(() => $("#card-cadastro-receita").removeClass("blink-card"), 1000);
+}
+
+const iniciarSelectListReordenarIngredientes = (dados) => {
+    let select = $("#select-reordernar-ingredientes-receitas");
+    select.empty();
+    $.each(dados, function(chave, valor){
+        let option = $("<option>").text(valor.codIngrediente.codIngrediente + " - " + valor.codIngrediente.desIngrediente + " - Qtd: " + valor.qtdKgs + "Kgs");
+        option.attr("value", valor.numSeq);
+        option.attr("selected", true);
+        select.append(option)
+    });
+    $('#select-reordernar-ingredientes-receitas').select2();
+    $('#select-reordernar-ingredientes-receitas').select2Sortable();
 }
