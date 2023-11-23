@@ -67,6 +67,7 @@ Pré-requisitos:
 - Executar o script de criação das tabelas armazenado no seguinte diretório ()
 
 ## Login no Sistema
+Acessar a aplicação em (http://localhost:8080/login)
 Utilizar as seguintes credenciais inicialmente:
 - User: ADMIN
 - Senha: 123456
