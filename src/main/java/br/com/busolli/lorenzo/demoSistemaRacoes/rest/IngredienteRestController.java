@@ -1,8 +1,7 @@
-package br.com.busolli.lorenzo.demoSistemaRacoes.controller.RESTController;
+package br.com.busolli.lorenzo.demoSistemaRacoes.rest;
 
 import br.com.busolli.lorenzo.demoSistemaRacoes.dto.ingrediente.CadastroIngredienteDTO;
 import br.com.busolli.lorenzo.demoSistemaRacoes.dto.ingrediente.EditarIngredienteDTO;
-import br.com.busolli.lorenzo.demoSistemaRacoes.model.Ingrediente;
 import br.com.busolli.lorenzo.demoSistemaRacoes.service.IngredienteService;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.validation.Valid;
@@ -25,6 +24,12 @@ public class IngredienteRestController {
     public ResponseEntity<?> listarIngredientes(HttpServletRequest request){
 
         return ResponseEntity.ok(service.buscarIngredientesAtivos(request));
+    }
+
+    @GetMapping("ingrediente/listarJson")
+    public ResponseEntity<?> listarIngredientesJson(){
+
+        return ResponseEntity.ok(service.buscarIngredientesAtivos());
     }
 
     @PutMapping("ingrediente/editar")

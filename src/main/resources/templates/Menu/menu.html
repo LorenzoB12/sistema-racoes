@@ -66,9 +66,12 @@
 
 	  <!-- MOMENT.JS -->
 	  <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.22.2/moment-with-locales.min.js"></script>
-	  
-	  <!-- ADICIONA O CABEÇALHO DE CADA PÁGINA NO HTML PRINCIPAL, OU SEJA, 
-	  FAZ OS IMPORTS DOS CSSs E JS (SE HOUVER) DE CADA PÁGINA INDIVIDUAL -->
+
+	  <script src="https://cdnjs.cloudflare.com/ajax/libs/Sortable/1.14.0/Sortable.min.js"></script>
+
+	   <!-- ADICIONA O CABEÇALHO DE CADA PÁGINA NO HTML PRINCIPAL, OU SEJA,
+       FAZ OS IMPORTS DOS CSSs E JS (SE HOUVER) DE CADA PÁGINA INDIVIDUAL -->
+
 	  <th:block th:with="pagina=${pagina}" th:insert="~{${pagina.replaceAll('_pt_BR','')} :: head}"></th:block>
 	  
    </head>

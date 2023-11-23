@@ -82,35 +82,8 @@ public class Datatables {
 	public Pageable getPageable() {
 		return PageRequest.of(getCurrentPage(), getLength(), getDirection(), getColumnName());
 	}
+
+	public Pageable getPageableWithoutPage() {
+		return PageRequest.of(0, 1000, Sort.Direction.ASC, "NUM_ORDEM");
+	}
 }
-
-/* EXEMPLO DE USO
-
-	//service
-	@Autowired
-	private AgendamentoRepository repo;
-	@Autowired
-	private Datatables datatables;
-	@Transactional(readOnly = true)
-	public Map<String, Object> buscarHistoricoPorPacienteEmail(String email, HttpServletRequest request) {
-		datatables.setRequest(request);
-		datatables.setColunas(DatatablesColunas.AGENDAMENTOS);
-		Page<HistoricoPaciente> page = repo.findHistoricoByPacienteEmail(email, datatables.getPageable());
-		return datatables.getResponse(page);
-	}
-
-	//controller
-	public ResponseEntity<?> historicoAgendamentosPorPaciente(HttpServletRequest request, @AuthenticationPrincipal User user){
-		return ResponseEntity.ok(service.buscarHistoricoPorPacienteEmail(user.getUsername(), request));
-	}
-
-	//repository
-	@Query("select a.id as id,"
-				+ "a.paciente as paciente,"
-				+ "CONCAT(a.dataConsulta, ' ', a.horario.horaMinuto) as dataConsulta,"
-				+ "a.medico as medico,"
-				+ "a.especialidade as especialidade "
-			+ "from Agendamento a "
-			+ "where a.paciente.usuario.email like :email")
-	Page<HistoricoPaciente> findHistoricoByPacienteEmail(String email, Pageable pageable);
- */

@@ -1,4 +1,4 @@
-package br.com.busolli.lorenzo.demoSistemaRacoes.controller.RESTController;
+package br.com.busolli.lorenzo.demoSistemaRacoes.rest;
 
 import br.com.busolli.lorenzo.demoSistemaRacoes.model.Usuario;
 import br.com.busolli.lorenzo.demoSistemaRacoes.service.UsuarioService;

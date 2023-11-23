@@ -12,6 +12,7 @@ import org.springframework.data.domain.Page;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import java.util.List;
 import java.util.Map;
 import java.util.Optional;
 
@@ -32,9 +33,14 @@ public class IngredienteService {
     @Transactional(readOnly = true)
     public Map<String, Object> buscarIngredientesAtivos(HttpServletRequest request){
         datatables.setRequest(request);
-        datatables.setColunas(DatatablesColunas.INGREDIENTES);
+        datatables.setColunas(DatatablesColunas.INGREDIENTE);
         Page<Ingrediente> page = repo.findAllByIndAtivoTrue(datatables.getPageable());
         return datatables.getResponse(page);
+    }
+
+    @Transactional(readOnly = true)
+    public List<Ingrediente> buscarIngredientesAtivos(){
+        return repo.findAllByIndAtivoTrue();
     }
 
     @Transactional(readOnly = false)

@@ -1,0 +1,41 @@
+tr td.tabela-maior{
+	height: 60px;
+	font-size: 16px;
+	font-weight: 100!important;
+}
+
+tr th.tabela-maior{
+	height: 60px;
+	font-size: 15px;
+}
+
+#table-receitas_length{
+    font-size: 13px;
+}
+
+#table-receitas_info{
+    font-size: 13px;
+}
+
+#table-receitas_paginate{
+    font-size: 13px;
+}
+
+tr td.tabela-menor{
+	height: 10px!important;
+	font-size: 13px!important;
+}
+
+tr th.tabela-menor{
+	height: 10px!important;
+	font-size: 13px!important;
+	font-weight: 100!important;
+}
+
+.table-receita-ingrediente{
+    margin-top: 20px;
+}
+
+#card-head-collapse-receitas{
+    cursor: pointer;
+}

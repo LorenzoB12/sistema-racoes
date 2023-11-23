@@ -76,3 +76,18 @@ function formatarDataBrParaUs(dataBr) {
 	var dataUs = partes[2] + '-' + partes[1] + '-' + partes[0];
 	return dataUs;
 }
+
+function formatarNumero(number) {
+	if(number == null || number == undefined){
+		return "";
+	}
+
+	// Converte o número para uma string e separa os decimais
+	const parts = number.toString().split(".");
+
+	// Formata a parte inteira com pontos a cada 3 dígitos
+	parts[0] = parts[0].replace(/\B(?=(\d{3})+(?!\d))/g, ".");
+
+	// Retorna o número formatado com vírgula como separador decimal
+	return parts.join(",");
+}
