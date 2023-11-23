@@ -35,13 +35,8 @@ A aplicação consiste em realizar dois cadastros base e fazer sua relação atr
 - HTML / CSS / JS
 - Jquery
 - Bibliotecas JS/CSS (Datatables, Bootstrap)
-- ## Banco de Dados
+## Banco de Dados
 - MySql
-
-## Implantação em produção
-- Back end: Heroku
-- Front end web: Netlify
-- Banco de dados: Postgresql
 
 # Como executar o projeto
 
@@ -69,10 +64,20 @@ Pré-requisitos:
 
 ## Banco de Dados
 Pré-requisitos:
+- Baixar e instalar o banco de dados MySql
+- Configurar uma instância do banco de dados para as seguintes propriedades:
+url = jdbc:mysql://localhost:3306/racoes?useTimezone=true&serverTimezone=America/Sao_Paulo&useSSL=false
+username = root
+password= root
+- Executar o script de criação das tabelas armazenado no seguinte diretório ()
 
+## Login no Sistema
+Utilizar as seguintes credenciais:
+User: ADMIN
+Senha: 123456
 
 # Autor
 
-Wellington Mazoni de Andrade
+Lorenzo Busolli
 
-https://www.linkedin.com/in/wmazoni
+https://www.linkedin.com/in/lorenzo-busolli/
