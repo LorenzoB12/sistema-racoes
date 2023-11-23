@@ -1,13 +1,8 @@
-<!--# ERP Rações -->
-<!--[![NPM](https://img.shields.io/npm/l/react)](https://github.com/devsuperior/sds1-wmazoni/blob/master/LICENSE) -->
-
 # Sobre o projeto
-
-<!--https://wmazoni-sds1.netlify.app-->
 
 ERP Rações é uma aplicação full stack web desenvolvida na plataforma do framework Spring Java. 
 
-A aplicação consiste em realizar dois cadastros base e fazer sua relação através de um cadastro de receitas que possuem ingredientes ordenados.
+A aplicação consiste em realizar dois cadastros base e fazer sua relação através de um cadastro de receitas que possuem ingredientes ordenados para serem consumidas pelo usuário da fábrica.
 
 ## Tela de Login
 ![Layout do Cadastro e Listagem de Ingredientes](https://github.com/LorenzoB12/assests/blob/main/TELA%20DE%20LOGIN.png)
@@ -51,7 +46,7 @@ Pré-requisitos:
 # clonar repositório
 git clone https://github.com/LorenzoB12/sistema-racoes
 
-# entrar na pasta do projeto back end
+# entrar na pasta do projeto back end (pasta raiz onde está contido o arquivo pom.xml)
 cd demoSistemaRacoes
 
 # executar o projeto
@@ -72,12 +67,12 @@ password= root
 - Executar o script de criação das tabelas armazenado no seguinte diretório ()
 
 ## Login no Sistema
-Utilizar as seguintes credenciais:
-User: ADMIN
-Senha: 123456
+Utilizar as seguintes credenciais inicialmente:
+- User: ADMIN
+- Senha: 123456
 
 # Autor
-
 Lorenzo Busolli
-
 https://www.linkedin.com/in/lorenzo-busolli/
+
+Acredito ter suprido todas as demandas solicitadas no projeto e toda a explicação para rodar a aplicação está no texto acima, porém se houverem dúvidas sobre a instalação, sobre qualquer processo do deploy da aplicação ou de como fazer seu uso, por favor, entre em contato! Desde já, agradeço!
