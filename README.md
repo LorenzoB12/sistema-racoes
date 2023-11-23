@@ -61,9 +61,9 @@ Pré-requisitos:
 Pré-requisitos:
 - Baixar e instalar o banco de dados MySql
 - Configurar uma instância do banco de dados para as seguintes propriedades:
--- url = jdbc:mysql://localhost:3306/racoes?useTimezone=true&serverTimezone=America/Sao_Paulo&useSSL=false
--- username = root
--- password= root
+    - url = jdbc:mysql://localhost:3306/racoes?useTimezone=true&serverTimezone=America/Sao_Paulo&useSSL=false
+    - username = root
+    - password= root
 - Executar o script de criação das tabelas armazenado no seguinte diretório ()
 
 ## Login no Sistema
